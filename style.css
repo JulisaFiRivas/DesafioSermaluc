@@ -1,0 +1,197 @@
+:root {
+    --Fondo: #010f1d;
+    --negro: #000000;
+    --blanco: #ffffff;
+    --gris: #adabc9;
+
+    --fuenteHeadings: 'roboto', sans-serif;
+    --fuenteParrafos: 'roboto', sans-serif;
+}
+
+/*hacks y globales*/
+html {
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /*Hack para box model*/
+}
+
+body {
+    font-size: 1.6rem;
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: var(--blanco);
+    font-family: var(--fuenteParrafos);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Tipografía */
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h1,
+h2 {
+    font-family: var(--fuenteHeadings);
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    font-family: var(--fuenteParrafos);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--fuenteHeadings);
+}
+
+/* ----- Main ----- */
+.fondo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/slide1.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.capa-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor {
+    height: 100vh;
+    width: min(90%, 120rem);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    background-color: rgba(173, 171, 201, .1);
+    padding: 2rem 10rem;
+    border-radius: 2rem;
+}
+
+.formulario-registro {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    grid-template-areas:
+        'sexo edad'
+        'tipo-registro servicio-ingreso'
+        'diagnostico diagnostico'
+        'boton1 boton2';
+}
+
+.registro__field {
+    border: none;
+    border-bottom: .2rem solid var(--blanco);
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: transparent;
+    width: 90%;
+}
+
+.campoIzq,
+.campoDer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Boton */
+.boton {
+    display: block;
+    font-family: var(--fuenteHeadings);
+    color: var(--negro);
+    background: var(--blanco);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 2rem;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+    }
+}
+/* Estilo para el campo select */
+select {
+    color: var(--negro); /* Color del texto del desplegable */
+    background-color: var(--negro); /* Fondo transparente */
+    border: none;
+    border-bottom: .2rem solid var(--blanco); /* Línea inferior blanca */
+    padding: 1rem;
+    width: 90%;
+}
+
+/* Estilo para las opciones del select */
+select option {
+    color: var(--negro); /* Color del texto de las opciones */
+    background-color: var(--blanco); /* Fondo blanco de las opciones */
+}
+
+/* Cambiar el color cuando el select está enfocado */
+select:focus {
+    outline: none;
+    border-bottom: .2rem solid var(--gris); /* Cambia el color del borde al enfocar */
+}
+
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+.boton--secundario {
+    background-color: transparent;
+    border: .1rem solid var(--gris);
+    color: var(--blanco);
+}
+
+/* Registro */
+
+.fondo--registro {
+    background-image: url('../img/slide2.jpg');
+}
+
+::-webkit-input-placeholder {
+    color: var(--blanco);
+    text-transform: uppercase;
+}
