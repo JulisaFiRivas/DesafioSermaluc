@@ -58,6 +58,14 @@
                         <a href="index.html" class="boton boton--secundario">ENVIAR</a>
                     </div>
                     
+                    <!-- Agregamos mensajes de flash para mostrar respuestas del servidor -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                 </div> <!-- Fin div contenido-->
             </main><!-- Fin div main-->
         </div><!-- Fin div capa de fondo-->
