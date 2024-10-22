@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro2</title>
     <meta name="description" content="Ejemplo: Login 1">
-    <link rel="preload" href="normalize.css" as="style">
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="preload" href="static\css\normalize.css" as="style">
+    <link rel="stylesheet" href="static\css\normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" href="static\css\style.css" as="style">
+    <link rel="stylesheet" href="static\css\style.css">
 </head>
 
 <body>
@@ -58,14 +58,22 @@
                         <a href="index.html" class="boton boton--secundario">ENVIAR</a>
                     </div>
                     
-                    <!-- Agregamos mensajes de flash para mostrar respuestas del servidor -->
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert">{{ message }}</div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
+                    <!-- Mostrar la predicción si está disponible -->
+                    {% if prediccion is not none %}
+                    <div class="resultado-prediccion">
+                        <h2>Resultado de la Predicción:</h2>
+                        <p>{{ prediccion }}</p>
+                    </div>
+                {% endif %}
+
+                <!-- Agregamos mensajes de flash para mostrar respuestas del servidor -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 </div> <!-- Fin div contenido-->
             </main><!-- Fin div main-->
         </div><!-- Fin div capa de fondo-->

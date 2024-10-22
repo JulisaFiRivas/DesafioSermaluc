@@ -80,26 +80,24 @@ def index():
             dmatrix = xgb.DMatrix([features])
             prediccion = modelo.predict(dmatrix)[0]
             
-            # Redondear predicción si es clasificación binaria
-            prediccion_final = round(prediccion) if prediccion >= 0 else prediccion
-            
+            # Renderizar el template con la predicción
             return render_template('registro.html', 
-                                 prediccion=prediccion_final,
-                                 datos_originales=datos_formulario,
-                                 datos_procesados=datos_procesados)
+                                   prediccion=prediccion,
+                                   datos_originales=datos_formulario,
+                                   datos_procesados=datos_procesados)
             
         except Exception as e:
             flash(f"Error al procesar la solicitud: {str(e)}")
             return render_template('registro.html', 
-                                 transformaciones=transformaciones,
-                                 valores_posibles={col: list(trans.keys()) 
-                                                 for col, trans in transformaciones.items()})
+                                   transformaciones=transformaciones,
+                                   valores_posibles={col: list(trans.keys()) 
+                                                     for col, trans in transformaciones.items()})
     
     # Para solicitudes GET, mostrar el formulario
     return render_template('registro.html', 
-                         transformaciones=transformaciones,
-                         valores_posibles={col: list(trans.keys()) 
-                                         for col, trans in transformaciones.items()})
+                           transformaciones=transformaciones,
+                           valores_posibles={col: list(trans.keys()) 
+                                             for col, trans in transformaciones.items()})
 
 if __name__ == '__main__':
     app.run(debug=True)
