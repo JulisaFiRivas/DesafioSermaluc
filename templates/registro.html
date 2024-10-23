@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro2</title>
     <meta name="description" content="Ejemplo: Login 1">
-    <link rel="preload" href="static\css\normalize.css" as="style">
-    <link rel="stylesheet" href="static\css\normalize.css">
+    <link rel="preload" href="normalize.css" as="style">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="preload" href="static\css\style.css" as="style">
-    <link rel="stylesheet" href="static\css\style.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="fondo fondo--registro">
@@ -23,22 +23,115 @@
                     <form class="formulario-registro" method="POST" action="/">
                         <div class="campoIzq sexo">
                             <select class="registro__field" id="sexo" name="sexo">
-                                <option value="" disabled selected>Sexo</option>
+                                <option value="" disabled selected>SEXO</option>
                                 <option value="Hombre">Hombre</option>
                                 <option value="Mujer">Mujer</option>
                             </select>
                         </div>
                         <div class="campoDer edad">
-                            <input class="registro__field" type="number" placeholder="Edad" id="edad" name="edad" min="1" max="120">
+                            <input class="registro__field" type="number" placeholder="Edad" id="edad" name="edad" min="1" max="120" required>
                         </div>
                         <div class="campoIzq tipo-registro">
-                            <input class="registro__field" type="text" placeholder="Tipo de Registro" id="tipo-registro" name="tipo-registro">
+                            <select class="registro__field" id="tipo-ingreso" name="tipo-ingreso">
+                                <option value="" disabled selected>TIPO DE INGRESO</option>
+                                <option value="Urgencia">Urgencia</option>
+                                <option value="Programada">Programada</option>
+                                <option value="Obstétrica">Obstétrica</option>
+                            </select>
                         </div>
                         <div class="campoDer servicio-ingreso">
-                            <input class="registro__field" type="text" placeholder="Servicio de Ingreso" id="servicio-ingreso" name="servicio-ingreso">
+                            <select class="registro__field" id="servicio-ingreso" name="servicio-ingreso">
+                                <option value="" disabled selected>SERVICIO INGRESO</option>
+                                <option value="Cirugía Infantil">Cirugía Infantil</option>
+                                <option value="Área Médica Adulto Cuidados Medios">Área Médica Adulto Cuidados Medios</option>
+                                <option value="Unidad de Tratamiento Intermedio (UTI) Adulto">Unidad de Tratamiento Intermedio (UTI) Adulto</option>
+                                <option value="Obstetricia y Ginecología">Obstetricia y Ginecología</option>
+                                <option value="Unidad de Tratamiento Intermedio Coronario">Unidad de Tratamiento Intermedio Coronario</option>
+                                <option value="Oftalmología">Oftalmología</option>
+                                <option value="Obstetricia">Obstetricia</option>
+                                <option value="Neonatología Cunás">Neonatología Cunás</option>
+                                <option value="Ginecología">Ginecología</option>
+                                <option value="Pediatría">Pediatría</option>
+                                <option value="Unidad de Recuperación de Pabellones (Central y CMA)">Unidad de Recuperación de Pabellones (Central y CMA)</option>
+                                <option value="Derivación Médico Quirúrgico">Derivación Médico Quirúrgico</option>
+                                <option value="Unidad de Cuidados Intensivos Adulto">Unidad de Cuidados Intensivos Adulto</option>
+                                <option value="Cirugía">Cirugía</option>
+                                <option value="Cirugía Cardiovascular">Cirugía Cardiovascular</option>
+                                <option value="Hospital de Día Quirúrgico">Hospital de Día Quirúrgico</option>
+                                <option value="Oncología">Oncología</option>
+                                <option value="Embarazo Alto Riesgo Obstétrico (Patológico)">Embarazo Alto Riesgo Obstétrico (Patológico)</option>
+                                <option value="Área Quirúrgica">Área Quirúrgica</option>
+                                <option value="Área Médico-Quirúrgico Pediátrica Cuidados Básicos">Área Médico-Quirúrgico Pediátrica Cuidados Básicos</option>
+                                <option value="Área Médico-Quirúrgico Cuidados Básicos">Área Médico-Quirúrgico Cuidados Básicos</option>
+                                <option value="Neurocirugía Adulto">Neurocirugía Adulto</option>
+                                <option value="Unidad de Tratamiento Intermedio Pediatría">Unidad de Tratamiento Intermedio Pediatría</option>
+                                <option value="Medicina">Medicina</option>
+                                <option value="Lactantes">Lactantes</option>
+                                <option value="Unidad Emergencia Adultos">Unidad Emergencia Adultos</option>
+                                <option value="Área Médico-Quirúrgico Cuidados Medios">Área Médico-Quirúrgico Cuidados Medios</option>
+                                <option value="Agudos Medicina">Agudos Medicina</option>
+                                <option value="Pensionado Adulto">Pensionado Adulto</option>
+                                <option value="Traumatología y Ortopedia">Traumatología y Ortopedia</option>
+                                <option value="Área MQ Pediatría">Área MQ Pediatría</option>
+                                <option value="Área Obstétrica">Área Obstétrica</option>
+                                <option value="Segunda Infancia">Segunda Infancia</option>
+                                <option value="Puerperio">Puerperio</option>
+                                <option value="Urología">Urología</option>
+                                <option value="Neonatología Incubadoras">Neonatología Incubadoras</option>
+                                <option value="UTI Adultos">UTI Adultos</option>
+                                <option value="Geriatría">Geriatría</option>
+                                <option value="Área Médica Adulto Cuidados Básicos">Área Médica Adulto Cuidados Básicos</option>
+                                <option value="Neurología Adulto">Neurología Adulto</option>
+                                <option value="Área Médico-Quirúrgico Pediátrica Cuidados Medios">Área Médico-Quirúrgico Pediátrica Cuidados Medios</option>
+                                <option value="Unidad de Tratamiento Intermedio Medicina Adulto">Unidad de Tratamiento Intermedio Medicina Adulto</option>
+                                <option value="Unidad de Tratamiento Intermedio Neonatología">Unidad de Tratamiento Intermedio Neonatología</option>
+                                <option value="Unidad Emergencia (Indiferenciado)">Unidad Emergencia (Indiferenciado)</option>
+                                <option value="Agudos Cirugía">Agudos Cirugía</option>
+                                <option value="Unidad Emergencia Niños">Unidad Emergencia Niños</option>
+                                <option value="Área Médica">Área Médica</option>
+                                <option value="Unidad de Cuidados Intensivos (UCI) (Indiferenciado)">Unidad de Cuidados Intensivos (UCI) (Indiferenciado)</option>
+                                <option value="Desconocido">Desconocido</option>
+                                <option value="Unidad de Cuidados Intensivos Neonatología">Unidad de Cuidados Intensivos Neonatología</option>
+                                <option value="Unidad de Tratamiento Intermedio Cardiovascular">Unidad de Tratamiento Intermedio Cardiovascular</option>
+                                <option value="Área de Trasplante Adulto">Área de Trasplante Adulto</option>
+                                <option value="Otorrinolaringología">Otorrinolaringología</option>
+                                <option value="Pensionado Maternidad">Pensionado Maternidad</option>
+                                <option value="Unidad de Tratamiento Intermedio Cirugía Adulto">Unidad de Tratamiento Intermedio Cirugía Adulto</option>
+                                <option value="Unidad de Agudos Neurología">Unidad de Agudos Neurología</option>
+                                <option value="Psiquiatría Corta Estadía">Psiquiatría Corta Estadía</option>
+                                <option value="Área Neonatología Cuidados Básicos">Área Neonatología Cuidados Básicos</option>
+                                <option value="Neurocirugía (Indiferenciado)">Neurocirugía (Indiferenciado)</option>
+                                <option value="Cirugía de Partes Blandas Infantil">Cirugía de Partes Blandas Infantil</option>
+                                <option value="Área de Trasplante Infantil">Área de Trasplante Infantil</option>
+                                <option value="Infecciosos Infantil">Infecciosos Infantil</option>
+                                <option value="Traumatología y Ortopedia Infantil">Traumatología y Ortopedia Infantil</option>
+                                <option value="Unidad de Agudos Médico Quirúrgicos">Unidad de Agudos Médico Quirúrgicos</option>
+                                <option value="Unidad de Cuidados Intensivos Pediatría">Unidad de Cuidados Intensivos Pediatría</option>
+                                <option value="Cirugía Plástica-Quemados Infantil">Cirugía Plástica-Quemados Infantil</option>
+                                <option value="Psiquiatría">Psiquiatría</option>
+                                <option value="Unidad de Tratamiento Intermedio Quemados">Unidad de Tratamiento Intermedio Quemados</option>
+                                <option value="Unidad de Tratamiento Intermedio Neuroquirúrgico">Unidad de Tratamiento Intermedio Neuroquirúrgico</option>
+                                <option value="Unidad de Cuidados Intensivos Cardiología">Unidad de Cuidados Intensivos Cardiología</option>
+                                <option value="Unidad de Cuidados Intensivos Cardiovascular">Unidad de Cuidados Intensivos Cardiovascular</option>
+                                <option value="Neuropsiquiatría Infantil">Neuropsiquiatría Infantil</option>
+                                <option value="Neurocirugía Infantil">Neurocirugía Infantil</option>
+                                <option value="Unidad de Cuidados Intensivos Quemados">Unidad de Cuidados Intensivos Quemados</option>
+                                <option value="Unidad de Tratamientos Intermedios Medicina">Unidad de Tratamientos Intermedios Medicina</option>
+                                <option value="Pensionado Pediátrico">Pensionado Pediátrico</option>
+                                <option value="Área Neonatología Cuidados Intermedios">Área Neonatología Cuidados Intermedios</option>
+                                <option value="Unidad de Agudos Traumatología">Unidad de Agudos Traumatología</option>
+                                <option value="Diabetes y Nutrición">Diabetes y Nutrición</option>
+                                <option value="Unidad de Tratamiento Intermedio Neurología">Unidad de Tratamiento Intermedio Neurología</option>
+                                <option value="Hospital de Día Oncológico">Hospital de Día Oncológico</option>
+                                <option value="Cirugía Máxilo Facial">Cirugía Máxilo Facial</option>
+                                <option value="Hospital de Día Médico">Hospital de Día Médico</option>
+                                <option value="Cirugía Plástica-Quemados Adultos">Cirugía Plástica-Quemados Adultos</option>
+                                <option value="Medicina Física y Rehabilitación">Medicina Física y Rehabilitación</option>
+                                <option value="Psiquiatría Forense Mediana Complejidad">Psiquiatría Forense Mediana Complejidad</option>
+                            </select>
                         </div>
                         <div class="campoIzq diagnostico">
-                            <input class="registro__field" type="text" placeholder="Diagnóstico" id="diagnostico" name="diagnostico">
+                            <input class="registro__field" type="text" placeholder="Diagnóstico" id="diagnostico" name="diagnostico" required>
                         </div>
                         <button type="submit" class="boton boton--secundario">ENVIAR</button>
                     </form>
