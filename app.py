@@ -33,7 +33,6 @@ def index():
         # Crear un diccionario con los datos
         input_data = {
             'SEXO': sexo,
-            'EDAD': int(edad),
             'TIPO_INGRESO': tipo_registro,
             'SERVICIOINGRESO': servicio_ingreso,
             'DIAGNOSTICO1': diagnostico
