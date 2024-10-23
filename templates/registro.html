@@ -14,20 +14,13 @@
     <link rel="preload" href="static\css\style.css" as="style">
     <link rel="stylesheet" href="static\css\style.css">
 </head>
-
 <body>
-
     <section class="fondo fondo--registro">
         <div class="capa-fondo">
-
             <main class="contenedor">
-
                 <div class="contenido">
-
                     <h1>Ingresa Datos</h1>
-
-                    <form class="formulario-registro">
-
+                    <form class="formulario-registro" method="POST" action="/">
                         <div class="campoIzq sexo">
                             <select class="registro__field" id="sexo" name="sexo">
                                 <option value="" disabled selected>Sexo</option>
@@ -35,50 +28,23 @@
                                 <option value="Mujer">Mujer</option>
                             </select>
                         </div>
-
                         <div class="campoDer edad">
                             <input class="registro__field" type="number" placeholder="Edad" id="edad" name="edad" min="1" max="120">
                         </div>
-
                         <div class="campoIzq tipo-registro">
                             <input class="registro__field" type="text" placeholder="Tipo de Registro" id="tipo-registro" name="tipo-registro">
                         </div>
-
                         <div class="campoDer servicio-ingreso">
                             <input class="registro__field" type="text" placeholder="Servicio de Ingreso" id="servicio-ingreso" name="servicio-ingreso">
                         </div>
-
                         <div class="campoIzq diagnostico">
                             <input class="registro__field" type="text" placeholder="Diagnóstico" id="diagnostico" name="diagnostico">
                         </div>
-
+                        <button type="submit" class="boton boton--secundario">ENVIAR</button>
                     </form>
-
-                    <div class="campoIzq boton1">
-                        <a href="index.html" class="boton boton--secundario">ENVIAR</a>
-                    </div>
-                    
-                    <!-- Mostrar la predicción si está disponible -->
-                    {% if prediccion is not none %}
-                    <div class="resultado-prediccion">
-                        <h2>Resultado de la Predicción:</h2>
-                        <p>{{ prediccion }}</p>
-                    </div>
-                {% endif %}
-
-                <!-- Agregamos mensajes de flash para mostrar respuestas del servidor -->
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert">{{ message }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                </div> <!-- Fin div contenido-->
-            </main><!-- Fin div main-->
-        </div><!-- Fin div capa de fondo-->
-    </section><!-- Fin fondo-->
-
+                </div>
+            </main>
+        </div>
+    </section>
 </body>
-
 </html>
